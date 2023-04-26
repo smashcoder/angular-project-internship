@@ -1,0 +1,114 @@
+<div class="header">
+  <h1 class="title">Master</h1>
+  <div class="sub-div-header">
+    <h3 class="sub-title">Show</h3>
+    <select class="sel-sh" (change)="onSelectChange($event)">
+      <option value="">-- Select an option --</option>
+      <option value="1">Student</option>
+      <option value="2" [selected]="true">Teacher</option>
+      <option value="3">Courses</option>
+    </select>
+    <button (click)="openForm()" class="bt-fe" style="margin-left: 10px;">Add Entry</button>
+  </div>
+  <div class="two">
+    <table *ngIf="!isFormOpen && !isEditFormOpen">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date of birth</th>
+          <th>Mobile Number</th>
+          <th>Address Line 1</th>
+          <th>Address Line 2</th>
+          <th>City</th>
+          <th>Country</th>
+          <th>Zip Code</th>
+          <th>Email</th>
+          <th style="border-left:solid white;"> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tableData">
+          <td>{{ item.id }}</td>
+          <td>{{ item.fname }}</td>
+          <td>{{ item.lname }}</td>
+          <td>{{ item.dob }}</td>
+          <td>{{ item.mn }}</td>
+          <td>{{ item.al1 }}</td>
+          <td>{{ item.al2 }}</td>
+          <td>{{ item.city }}</td>
+          <td>{{ item.country }}</td>
+          <td>{{ item.zcode }}</td>
+          <td>{{ item.email }}</td>
+          <td style="border-left:solid black"><button (click)="editEntry(item)" class="bt-fe">Edit</button></td>
+          <td><button (click)="deleteEntry(item.id)" class="bt-fe">Delete</button></td>
+        </tr>
+        <tr *ngFor="let item of dataService.entries">
+          <td>{{ item.id }}</td>
+          <td>{{ item.fname }}</td>
+          <td>{{ item.lname }}</td>
+          <td>{{ item.dob }}</td>
+          <td>{{ item.mn }}</td>
+          <td>{{ item.al1 }}</td>
+          <td>{{ item.al2 }}</td>
+          <td>{{ item.city }}</td>
+          <td>{{ item.country }}</td>
+          <td>{{ item.zcode }}</td>
+          <td>{{ item.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <app-form-teacher (submitted)="onFormSubmitted()" *ngIf="isFormOpen"></app-form-teacher>
+  </div>
+  <div *ngIf="isEditFormOpen" class="three">
+    <form #editForm="ngForm" class="t-form-3">
+      <label for="editFname">First Name </label>
+      <input type="text" name="editFname" [(ngModel)]="selectedItem.fname" required>
+
+      <label for="editLname">Last Name </label>
+      <input type="text" name="editLname" [(ngModel)]="selectedItem.lname" required>
+
+      <br><br>
+
+      <label for="editDob">Date of birth </label>
+      <input type="date" name="editDob" [(ngModel)]="selectedItem.dob" required>
+
+      <br><br>
+
+      <label for="editMn">Mobile Number </label>
+      <input type="text" name="editMn" [(ngModel)]="selectedItem.mn" required>
+
+      <br><br>
+
+      <label for="editAl1">Address Line 1 </label>
+      <input type="text" name="editAl1" [(ngModel)]="selectedItem.al1" required>
+
+      <br><br>
+
+      <label for="editAl2">Address Line 2 </label>
+      <input type="text" name="editAl2" [(ngModel)]="selectedItem.al2" required>
+
+      <br><br>
+
+      <label for="editCity">City </label>
+      <input type="text" name="editCity" [(ngModel)]="selectedItem.city" required>
+
+      <label for="editCountry">Country </label>
+      <input type="text" name="editCountry" [(ngModel)]="selectedItem.country" required>
+
+      <label for="editZcode">Zip Code </label>
+      <input type="text" name="editZcode" [(ngModel)]="selectedItem.zcode" required>
+
+      <br><br>
+
+      <label for="editEmail">Email </label>
+      <input type="email" name="editEmail" [(ngModel)]="selectedItem.email" required>
+
+      <br><br>
+
+      <button type="submit" (click)="updateEntry()" class="bt-fe">Update</button>
+    </form>
+  </div>
+</div>

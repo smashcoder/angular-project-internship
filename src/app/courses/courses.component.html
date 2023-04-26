@@ -1,0 +1,54 @@
+<div class="header">
+  <h1 class="title">Master</h1>
+  <div class="sub-div-header">
+    <h3 class="sub-title">Show</h3>
+    <select class="sel-sh" (change)="onSelectChange($event)">
+      <option value="">-- Select an option --</option>
+      <option value="1">Student</option>
+      <option value="2">Teacher</option>
+      <option value="3" [selected]="true">Courses</option>
+    </select>
+    <button (click)="openForm()" class="bt-fe" style="margin-left: 10px;">Add Entry</button>
+  </div>
+  <div class="two">
+    <table *ngIf="!isFormOpen && !isEditFormOpen">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th style="border-left:solid white;"> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tableData">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td style="border-left:solid black"><button (click)="editEntry(item)" class="bt-fe">Edit</button></td>
+          <td><button (click)="deleteEntry(item.id)" class="bt-fe">Delete</button></td>
+        </tr>
+        <tr *ngFor="let item of dataService.entries">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <app-form-courses (submitted)="onFormSubmitted()" *ngIf="isFormOpen"></app-form-courses>
+  </div>
+  <div *ngIf="isEditFormOpen" class="three">
+    <form #editForm="ngForm" class="t-form-3">
+
+      <label for="editname"> ID </label>
+      <input type="text" name="editID" [(ngModel)]="selectedItem.id" required>
+
+      <br><br>
+
+      <label for="editname"> Name </label>
+      <input type="text" name="editname" [(ngModel)]="selectedItem.name" required>
+
+      <br><br>
+
+      <button type="submit" (click)="updateEntry()" class="bt-fe">Update</button>
+    </form>
+    </div>
+</div>

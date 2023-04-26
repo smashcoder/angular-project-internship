@@ -1,0 +1,69 @@
+.header {
+  width: 100%;
+  height: 100%;
+  margin-left: 200px;
+  position: fixed;
+}
+
+.title {
+  padding: 24px;
+  background-color: rgb(54, 13, 56);
+  color: aliceblue;
+}
+
+.card {
+    transition: 0.3s;
+    width: 300px;
+    //margin-left: 210px;
+    position: fixed;
+    top:150px;
+    cursor: pointer;
+  }
+  
+  .card:hover{
+    box-shadow: 0 8px 16px 0 rgba(77, 184, 255, 0.2);
+    background-color: rgb(56, 6, 56);
+    color: aliceblue;
+  }
+
+  .card:hover .st-icon{
+    color: aliceblue;
+  }
+
+  .card:hover .card-title{
+    color: aliceblue;
+  }
+  
+  .st-icon{
+    font-size: 3em;
+  }
+  
+  .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .card-title {
+    font-size: 21px;
+    color: #333;
+  }
+
+  .la-hrz{
+    scroll-behavior:smooth;
+  }
+  
+  .content{
+    position: fixed;
+    top: 50px;
+    color: black;
+  }
+
+  section{
+    height: 1280px;
+    width: 100%;
+    background-color: rgba(243, 225, 255, 0.379);
+  }
+
+  

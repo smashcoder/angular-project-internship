@@ -1,0 +1,50 @@
+<div *ngIf="isEditFormOpen">
+  <form #editForm="ngForm">
+    <label for="editFname">First Name</label>
+    <input type="text" name="editFname" [(ngModel)]="selectedItem.fname" required>
+
+    <label for="editLname">Last Name</label>
+    <input type="text" name="editLname" [(ngModel)]="selectedItem.lname" required>
+
+    <label for="editPfname">Parent First Name</label>
+    <input type="text" name="editPfname" [(ngModel)]="selectedItem.pfname" required>
+
+    <label for="editPlname">Parent Last Name</label>
+    <input type="text" name="editPlname" [(ngModel)]="selectedItem.plname" required>
+
+    <label for="editDob">Date of birth</label>
+    <input type="date" name="editDob" [(ngModel)]="selectedItem.dob" required>
+
+    <label for="editMn">Mobile Number</label>
+    <input type="text" name="editMn" [(ngModel)]="selectedItem.mn" required>
+
+    <label for="editAl1">Address Line 1</label>
+    <input type="text" name="editAl1" [(ngModel)]="selectedItem.al1" required>
+
+    <label for="editAl2">Address Line 2</label>
+    <input type="text" name="editAl2" [(ngModel)]="selectedItem.al2" required>
+
+    <label for="editCity">City</label>
+    <input type="text" name="editCity" [(ngModel)]="selectedItem.city" required>
+
+    <label for="editCountry">Country</label>
+    <input type="text" name="editCountry" [(ngModel)]="selectedItem.country" required>
+
+    <label for="editZcode">Zip Code</label>
+    <input type="text" name="editZcode" [(ngModel)]="selectedItem.zcode" required>
+
+    <label for="editEmail">Email</label>
+    <input type="email" name="editEmail" [(ngModel)]="selectedItem.email" required>
+
+    <label for="editTeacher">Teacher</label>
+    <input type="text" name="editTeacher" [(ngModel)]="selectedItem.teacher" required>
+
+    <label for="editCourse">Course</label>
+    <input type="text" name="editCourse" [(ngModel)]="selectedItem.course" required>
+
+    <label for="editFees">Fees</label>
+    <input type="text" name="editFees" [(ngModel)]="selectedItem.fees" required>
+
+    <button type="submit" (click)="updateEntry()">Update</button>
+  </form>
+</div>

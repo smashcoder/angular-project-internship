@@ -1,0 +1,66 @@
+<form (ngSubmit)="submitForm()">
+      <label for="Fname">First Name </label>
+      <input type="text" name="fname" [(ngModel)]="fname" required>
+  
+      <label for="Lname">Last Name </label>
+      <input type="text" name="lname" [(ngModel)]="lname" required>
+
+      <br><br>
+  
+      <label for="Pfname">Parent First Name </label>
+      <input type="text" name="pfname" [(ngModel)]="pfname" required>
+  
+      <label for="Plname">Parent Last Name </label>
+      <input type="text" name="plname" [(ngModel)]="plname" required>
+
+      <br><br>
+  
+      <label for="Dob">Date of birth </label>
+      <input type="date" name="dob" [(ngModel)]="dob" required>
+
+      <br><br>
+  
+      <label for="Mn">Mobile Number </label>
+      <input type="text" name="mn" [(ngModel)]="mn" required>
+
+      <br><br>
+  
+      <label for="Al1">Address Line 1 </label>
+      <input type="text" name="al1" [(ngModel)]="al1" required>
+
+      <br><br>
+  
+      <label for="Al2">Address Line 2 </label>
+      <input type="text" name="al2" [(ngModel)]="al2" required>
+
+      <br><br>
+  
+      <label for="City">City </label>
+      <input type="text" name="city" [(ngModel)]="city" required>
+  
+      <label for="Country">Country </label>
+      <input type="text" name="country" [(ngModel)]="country" required>
+  
+      <label for="Zcode">Zip Code </label>
+      <input type="text" name="zcode" [(ngModel)]="zcode" required>
+
+      <br><br>
+  
+      <label for="Email">Email </label>
+      <input type="email" name="email" [(ngModel)]="email" required>
+
+      <br><br>
+  
+      <label for="Teacher">Teacher </label>
+      <input type="text" name="teacher" [(ngModel)]="teacher" required>
+  
+      <label for="Course">Course </label>
+      <input type="text" name="course" [(ngModel)]="course" required>
+  
+      <label for="Fees">Fees </label>
+      <input type="text" name="fees" [(ngModel)]="fees" required>
+
+      <br><br>
+    <button type="submit">Submit</button>
+  </form>
+  

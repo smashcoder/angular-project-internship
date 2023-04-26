@@ -1,0 +1,44 @@
+<div class="sidebar" [ngClass]="{ 'collapsed': isCollapsed }">
+  <h2 class="sidebar-title">
+    <i class="bi bi-building title-icon" [ngClass]="{ 'collapsed': isCollapsed }"></i>
+    <span class="sidebar-header" [ngClass]="{ 'collapsed': isCollapsed }"> Academy</span>
+  </h2>
+  <hr>
+  <ul>
+    <li routerLink="/dashboard" routerLinkActive="active">
+      <a [ngClass]="{ 'active': currentRoute === 'dashboard' }">
+      <i class="bi bi-speedometer icon-style" [ngClass]="{ 'collapsed': isCollapsed }"></i>
+      <span class="title" [ngClass]="{ 'collapsed': isCollapsed }"> Dashboard</span>
+      </a>
+    </li>
+    <li routerLink="/admin" routerLinkActive="active">
+      <a [ngClass]="{ 'active': currentRoute === 'admin' }">
+      <i class="bi bi-person-gear icon-style" [ngClass]="{ 'collapsed': isCollapsed }"></i>
+      <span class="title" [ngClass]="{ 'collapsed': isCollapsed }"> Master</span>
+      </a>
+    </li>
+    <li routerLink="/credit" routerLinkActive="active">
+      <a [ngClass]="{ 'active': currentRoute === 'credit' }">
+      <i class="bi bi-coin icon-style" [ngClass]="{ 'collapsed': isCollapsed }"></i>
+      <span class="title" [ngClass]="{ 'collapsed': isCollapsed }"> Credit</span>
+      </a>
+    </li>
+    <li routerLink="/session" routerLinkActive="active">
+      <a [ngClass]="{ 'active': currentRoute === 'session' }">
+      <i class="bi bi-card-list icon-style" [ngClass]="{ 'collapsed': isCollapsed }"></i>
+      <span class="title" [ngClass]="{ 'collapsed': isCollapsed }"> Session</span>
+      </a>
+    </li>
+    <!--<li>
+      <a (click)="Logout()">
+      <i class="bi bi-box-arrow-in-left icon-style" [ngClass]="{ 'collapsed': isCollapsed }"></i>
+      <span class="title" [ngClass]="{ 'collapsed': isCollapsed }"> Logout</span>
+      </a>
+    </li>-->
+  </ul>
+  <button class="toggle-btn" (click)="toggleCollapsed()">
+    <i class="bi bi-chevron-right iarrow" [ngClass]="{ 'collapsed': isCollapsed }"></i>
+    <i class="bi bi-chevron-left icarrow" [ngClass]="{ 'collapsed': isCollapsed }"></i>
+  </button>
+</div>
+

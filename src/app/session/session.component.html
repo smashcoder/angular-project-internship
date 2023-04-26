@@ -1,0 +1,41 @@
+<div class="header">
+  <h1 class="title">Sessions</h1>
+  <div class="two">
+    <table *ngIf="!isFormOpen && (!isAddFormOpen && !isRemoveFormOpen)">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Teacher Name</th>
+          <th>Sessions Left</th>
+          <th>Total Session Completed</th>
+          <th style="border-left:solid white;"> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tableData">
+          <td>{{ item.id }}</td>
+          <td>{{ item.fname + " " + item.lname }}</td>
+          <td>{{item.sl}}</td>
+          <td>{{item.tsc}}</td>
+          <td style="border-left:solid black"><button (click)="add(+item.sl, +item.tsc)" class="bt-fe">Add</button></td>
+          <td><button (click)="remove(+item.sl)" class="bt-fe">Remove</button></td>
+        </tr>
+      </tbody>
+      </table>
+  </div>
+  <div *ngIf="isAddFormOpen" class="three">
+    <form (ngSubmit)="addCredit(addForm)" #addForm="ngForm" class="t-form-3">
+      <label>Add Sessions:</label>
+      <input type="number" id="addsl" name="addTC" ngModel required>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+  <div *ngIf="isRemoveFormOpen" class="three">
+    <form (ngSubmit)="removeCredit(removeForm)" #removeForm="ngForm" class="t-form-3">
+      <label>Remove Sessions:</label>
+      <input type="number" id="removeTC" name="removeTC" ngModel required>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>

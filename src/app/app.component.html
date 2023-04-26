@@ -1,0 +1,10 @@
+<div>
+  <router-outlet>
+    <ng-container *ngIf="isLoggedIn; else login">
+      <app-sidebar></app-sidebar>
+    </ng-container>
+    <ng-template #login>
+      <app-loginpage (login)="onLogin($event)"></app-loginpage>
+    </ng-template>
+  </router-outlet>
+</div>

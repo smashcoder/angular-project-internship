@@ -1,0 +1,50 @@
+<div class="header">
+  <h1 class="title">Credits</h1>
+  <div class="two">
+    <table *ngIf="!isFormOpen && (!isAddFormOpen && !isRemoveFormOpen)">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Student Name</th>
+          <th>Course ID</th>
+          <th>Total Credits</th>
+          <th style="border-left:solid white;"> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tableData">
+          <td>{{ item.id }}</td>
+          <td>{{ item.fname}}</td>
+          <td>{{ item.cid }}</td>
+          <td>{{ item.tc }}</td>
+          <td style="border-left:solid black;"><button (click)="add(+item.tc)" class="bt-fe">Add</button></td>
+          <td><button (click)="remove(+item.tc)" class="bt-fe">Remove</button></td>
+        </tr>
+        <tr *ngFor="let item of dataService.entries">
+          <td>{{ item.id }}</td>
+          <td>{{ item.fname }}</td>
+          <td>{{ item.cid }}</td>
+          <td>{{ item.tc }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <app-form-overlay (submitted)="onFormSubmitted()" *ngIf="isFormOpen"></app-form-overlay>
+  </div>
+  <div *ngIf="isAddFormOpen" class="three">
+    <form (ngSubmit)="addCredit(addForm)" #addForm="ngForm" class="t-form-3">
+      <label for="addTC">Add Credits:</label>
+      <input type="number" id="addTC" name="addTC" ngModel required>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+
+  <div *ngIf="isRemoveFormOpen" class="three">
+    <form (ngSubmit)="removeCredit(removeForm)" #removeForm="ngForm" class="t-form-3">
+      <label>Remove Credits:</label>
+      <input type="number" id="removeTC" name="removeTC" ngModel required>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+
+</div>

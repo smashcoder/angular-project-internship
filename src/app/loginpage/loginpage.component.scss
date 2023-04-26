@@ -1,0 +1,53 @@
+.lgpage{
+    width: 100%;
+    background-color: rgba(255, 179, 240, 0.173);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bx{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(10, 0, 26);
+    padding: 5% 10%;
+    border-radius: 5%;
+}
+
+.bx-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.bx-1 input{
+    width: 300px;
+    margin: 5%;
+    padding: 5%;
+    text-align: center;
+    border: 3px double #ffffff;
+    border-radius: 10px;
+}
+
+.bx-1 input:focus{
+    outline: none;
+    border-color: rgb(118, 0, 139);
+}
+
+.login-bt{
+    padding: 3% 9%;
+    border: none;
+    background-color: rgb(252, 223, 255);
+    border-radius: 10px;
+}
+
+.login-bt:hover{
+    background-color: rgb(57, 0, 70);
+    color: aliceblue;
+    cursor: pointer;
+}
